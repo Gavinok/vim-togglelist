@@ -1,14 +1,7 @@
-" toggle list plugin
-"
-" Donald Ephraim Curtis (2011)
-"
-" boom
-"
-" This plugin allows you to use \l and \q to toggle the location list and
-" quickfix list (respectively).
-"
-"
-
+" File: togglelist.vim
+" Author: Gavin
+" Description: toggle quickfix with a simple keymapping
+" Last Modified: October 24, 2019
 if exists("g:loaded_toggle_list")
   finish
 endif
@@ -73,11 +66,3 @@ function! ToggleQuickfixList()
     wincmd p
   endif
 endfunction
-
-if !exists("g:toggle_list_no_mappings")
-    nmap <script> <silent> <leader>l :call ToggleLocationList()<CR>
-    nmap <script> <silent> <leader>q :call ToggleQuickfixList()<CR>
-endif
-
-
-
