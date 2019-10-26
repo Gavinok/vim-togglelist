@@ -13,7 +13,7 @@ function! s:GetBufferList()
   return buflist 
 endfunction
 
-function! ToggleLocationList()
+function! togglelist#ToggleLocationList()
   let curbufnr = winbufnr(0)
   for bufnum in map(filter(split(s:GetBufferList(), '\n'), 'v:val =~ "Location List"'), 'str2nr(matchstr(v:val, "\\d\\+"))')
     if curbufnr == bufnum
@@ -49,7 +49,7 @@ function! ToggleLocationList()
   exec winnr."wincmd w"
 endfunction
 
-function! ToggleQuickfixList()
+function! togglelist#ToggleQuickfixList()
   for bufnum in map(filter(split(s:GetBufferList(), '\n'), 'v:val =~ "Quickfix List"'), 'str2nr(matchstr(v:val, "\\d\\+"))') 
     if bufwinnr(bufnum) != -1
       cclose
